@@ -1,4 +1,104 @@
-/*#region RegionName*/
+/*#region Generellt*/
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+nav{
+    grid-area: nav;
+    background: lightseagreen;
+}
+
+#nav_links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+#nav_links li a{
+    text-decoration: none;
+}
 
 
-/*#endregion RegionName*/
+/*#endregion Generellt*/
+
+
+
+/*#region Hem*/
+
+#hem_wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr 2fr 2fr;
+    grid-template-areas: 
+    "nav nav"
+    "he1 he1"
+    "he2 he2"
+    "ar1 ar2"
+    "ar3 ar3"
+    ;
+
+    height: 100vh;
+}
+
+#hem_main_header{
+    grid-area: he1;
+    background: lightblue;
+    display: flex;
+    align-items: center;
+}
+
+#hem_subheader{
+    grid-area: he2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: lightpink;
+}
+
+#hem_food{
+    grid-area: ar1;
+    background: lightyellow;
+    display: flex;
+    align-items: end;
+}
+
+#hem_history{
+    grid-area: ar2;
+    background: lightgray;
+    display: flex;
+    align-items: end;
+}
+
+#hem_seasons{
+    grid-area: ar3;
+    display: flex;
+    align-items: end;
+}
+
+/*#endregion Hem*/
+
+
+
+/*#region Mat*/
+
+
+/*#endregion Mat*/
+
+
+
+/*#region Historia*/
+
+
+/*#endregion Historia*/
+
+
+
+/*#region Arstider*/
+
+
+/*#endregion Arstider*/
