@@ -9,17 +9,34 @@
 nav{
     grid-area: nav;
     background: lightseagreen;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
 }
 
 #nav_links{
     display: flex;
-    flex-direction: row;
     justify-content: space-evenly;
     list-style: none;
 }
 
+#nav_links li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #nav_links li a{
     text-decoration: none;
+    color: white;
+    font-size: 2rem;
+}
+
+.nav_link_underline{
+    background: white;
+    height: 2px;
+    width: 5rem;
 }
 
 
@@ -51,6 +68,10 @@ nav{
     align-items: center;
 }
 
+#hem_main_header h1{
+    margin-left: 7%;
+}
+
 #hem_subheader{
     grid-area: he2;
     display: flex;
@@ -76,8 +97,43 @@ nav{
 
 #hem_seasons{
     grid-area: ar3;
+
+}
+
+#hem_spring{
+    background: greenyellow;
+    height: 100%;
+    width: 100%;
     display: flex;
     align-items: end;
+}
+
+.hem_delsid_h3{
+    margin: 10px;
+    transition: all 0.5s;
+}
+
+.hem_hover_rubrik:hover h3{
+    transform: translateY(-10px);
+}
+
+#hem_seasons:hover figure h3{
+    transform: translateY(-10px);
+}
+
+#hem_summer{
+    background: yellow;
+    display: none;
+}
+
+#hem_autumn{
+    background: orange;
+    display: none;
+}
+
+#hem_winter{
+    background: lightblue;
+    display: none;
 }
 
 /*#endregion Hem*/
@@ -97,8 +153,70 @@ nav{
 /*#endregion Historia*/
 
 
+/*#region Årstider*/
 
-/*#region Arstider*/
+
+/*#endregion Årstider*/
+
+@media screen and (min-width: 800px)
+{
+    /*#region Generellt*/
 
 
-/*#endregion Arstider*/
+    /*#endregion Generellt*/
+
+    /*#region Hem*/
+
+    #hem_seasons{
+        grid-area: ar3;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+        "sp su"
+        "au wi"
+        ;
+    }
+
+    #hem_spring{
+        grid-area: sp;
+    }
+
+    #hem_spring h3{
+        display: none;
+    }
+    
+    #hem_summer{
+        grid-area: su;    
+        display: initial;   
+    }
+    
+    #hem_autumn{
+        grid-area: au;     
+        display: initial; 
+        display: flex;
+        align-items: end;  
+    }
+    
+    #hem_winter{
+        grid-area: wi;
+        display: initial;
+    }
+
+    /*#endregion Hem*/
+
+    /*#region Mat*/
+
+
+    /*#endregion Mat*/
+
+    /*#region Historia*/
+
+
+    /*#endregion Historia*/
+
+    /*#region Årstider*/
+
+
+    /*#endregion Årstider*/
+}
