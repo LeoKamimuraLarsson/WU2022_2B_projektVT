@@ -39,6 +39,15 @@ nav{
     width: 5rem;
 }
 
+#hamburger_menu div{
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 5px;
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+
 
 /*#endregion Generellt*/
 
@@ -97,7 +106,6 @@ nav{
 
 #hem_seasons{
     grid-area: ar3;
-
 }
 
 #hem_spring{
@@ -168,7 +176,6 @@ nav{
     /*#region Hem*/
 
     #hem_seasons{
-        grid-area: ar3;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
