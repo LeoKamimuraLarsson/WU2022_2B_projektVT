@@ -149,7 +149,7 @@ nav{
     transform: translateY(-10px);
 }
 
-#hem_seasons:hover figure h3{
+#hem_seasons:hover figure figcaption{
     transform: translateY(-10px);
 }
 
@@ -228,7 +228,7 @@ nav{
         grid-area: sp;
     }
 
-    #hem_spring h3{
+    #hem_spring figcaption{
         display: none;
     }
     
