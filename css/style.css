@@ -23,7 +23,7 @@ nav{
     background: lightseagreen;
     position: absolute;
     height: 90vh; /*TODO: Sätt nav till 10vh i alla wrappers*/
-    width: 100vw;
+    width: 100%;
     top: -90vh;
     transition: all 0.5s;
     align-items: center;
@@ -97,6 +97,10 @@ nav{
     ;
 }
 
+#hem_wrapper a{
+    text-decoration: none;
+}
+
 #hem_main_header{
     grid-area: he1;
     background: lightblue;
@@ -119,29 +123,41 @@ nav{
 
 #hem_food{
     grid-area: ar1;
+}
+
+#hem_food article{
     background: lightyellow;
     display: flex;
     align-items: end;
+    height: 100%;
 }
 
 #hem_history{
     grid-area: ar2;
+}
+
+#hem_history article{
     background: lightgray;
     display: flex;
     align-items: end;
+    height: 100%;
 }
 
 #hem_seasons{
     grid-area: ar3;
 }
 
-#hem_seasons figure img{
+#hem_seasons article{
+    height: 100%;
+}
+
+#hem_seasons article figure img{
     height: 100%;
     width: 100%;
 }
 
-#hem_seasons:hover figure figcaption{
-    transform: translateY(-10px);
+#hem_seasons:hover article figure figcaption{
+    transform: translateY(-1rem);
 }
 
 #hem_spring{
@@ -154,12 +170,15 @@ nav{
 }
 
 .hem_delsid_rubrik{
-    margin: 10px;
+    margin: 1rem;
     transition: all 0.5s;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: unset;
 }
 
 .hem_hover_rubrik:hover h3{
-    transform: translateY(-10px);
+    transform: translateY(-1rem);
 }
 
 #hem_summer{
@@ -245,7 +264,7 @@ nav{
         
     }
 
-    #hem_seasons{
+    #hem_seasons article{
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
