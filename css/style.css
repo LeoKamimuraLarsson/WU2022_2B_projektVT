@@ -204,9 +204,80 @@ nav{
 /*#endregion Hem*/
 
 
+/* how to make gradient:
+background-image: linear-gradient(
+      rgba(0, 0, 0, 0.0) 0%,
+      rgba(0, 0, 0, 0.0) 70%,
+      rgb(0, 0, 0, 0.5) 100%
+    );
+*/
+
 
 /*#region Mat*/
 
+#food_wrapper{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(30px, 10vh) 90vh 90vh;
+    grid-template-areas: 
+    "nav nav"
+    "hea hea"
+    "sec sec"
+    ;
+}
+
+#food_main_header{
+    grid-area: hea;
+    background: lightblue;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    background-image: linear-gradient(
+      rgba(0, 0, 0, 0.0) 0%,
+      rgba(0, 0, 0, 0.0) 80%,
+      rgb(240, 128, 128) 100%
+    );
+}
+
+#food_main_header h2{ /*Bra med h2 här?*/
+    margin: 5%;
+}
+
+#food_section{
+    grid-area: sec;
+    background: rgb(240, 128, 128);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#food_section header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0.8rem;
+}
+
+#food_section header h1{
+    font-size: 2rem;
+}
+
+#food_section header div{
+    background: black;
+    width: 10rem;
+    height: 2px;
+}
+
+.food_article{
+    display: flex;
+    margin: 1rem;
+}
+
+.food_article img{
+    height: 120px;
+    width: 200px;
+    margin-right: 1rem;
+}
 
 /*#endregion Mat*/
 
