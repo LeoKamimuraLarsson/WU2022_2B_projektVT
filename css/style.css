@@ -12,7 +12,6 @@ nav{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
 }
 
 #nav_links{
@@ -410,14 +409,11 @@ background-image: linear-gradient(
 #seasons_wrapper{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: minmax(30px, 10vh) 90vh 90vh 90vh 90vh;
+    grid-template-rows: minmax(30px, 10vh) 90vh 330vh;
     grid-template-areas: 
     "nav nav"
     "she she"
-    "spr spr"
-    "sum sum"
-    "aut aut"
-    "win win"
+    "sec sec"
     ;
 }
 
@@ -430,18 +426,66 @@ background-image: linear-gradient(
 
 #seasons_underline{
     height: 2px;
-    width: 10rem;
+    width: 7rem;
     background: black;
 }
 
+#seasons_section{
+    grid-area: sec;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: gainsboro;
+}
+
+#seasons_section_header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    background: lightseagreen;
+}
+
 .seasons_article{
-
+    height: 80vh;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
-#spring{
-    grid-area: spr;
+.seasons_article header{
+    height: 45vh;
+    display: flex;
+    align-items: end;
+    border-radius: 10px;
+    margin-bottom: 1rem;
 }
 
+.seasons_article div{
+    background: red;
+    width: 25%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+#spring header{
+    background: lightgreen;
+}
+
+#summer header{
+    background: lightyellow;
+}
+
+#autumn header{
+    background: orange;
+}
+
+#winter header{
+    background: white;
+}
 
 /*#endregion Årstider*/
 
