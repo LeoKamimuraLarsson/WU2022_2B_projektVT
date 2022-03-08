@@ -8,10 +8,14 @@
 
 nav{
     grid-area: nav;
-    background: red;
+    background: rgb(42,39,39);
     display: flex;
     flex-direction: column;
     justify-content: center;
+    z-index: 10;
+    position: fixed;
+    width: 100%;
+    height: 10vh;
 }
 
 #nav_links{
@@ -19,7 +23,7 @@ nav{
     flex-direction: column;
     justify-content: space-evenly;
     list-style: none;
-    background: lightseagreen;
+    background: rgba(0,0,0, 0.9);
     position: absolute;
     height: 90vh; /*TODO: Sätt nav till 10vh i alla wrappers*/
     width: 100%;
@@ -58,7 +62,7 @@ nav{
 #hamburger_menu div{
     width: 25px; /*Borde ha höjd och bredd i procent*/
     height: 3px;
-    background-color: black;
+    background-color: white;
     margin: 5px;
     border-radius: 3px;
     transition: all 0.5s;
@@ -409,7 +413,7 @@ background-image: linear-gradient(
 #seasons_wrapper{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: minmax(30px, 10vh) 90vh 330vh;
+    grid-template-rows: minmax(30px, 10vh) 90vh 365vh;
     grid-template-areas: 
     "nav nav"
     "she she"
@@ -422,12 +426,65 @@ background-image: linear-gradient(
     background: lightblue;
     display: flex;
     flex-direction: column;
+    position: relative;
+}
+
+#seasons_header_background {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "spr sum"
+    "aut win"
+    ;
+}
+
+#seasons_header_background img{
+    height: 100%;
+    width: 100%;
+}
+
+#seasons_spring_img{
+    grid: spr;
+}
+
+#seasons_summer_img{
+    grid: sum;
+}
+
+#seasons_autumn_img{
+    grid: aut;
+}
+
+#seasons_winter_img{
+    grid: win;
+}
+
+#seasons_header_title{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #seasons_underline{
     height: 2px;
-    width: 7rem;
+    width: 10rem;
     background: black;
+}
+
+#seasons_header_icon{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
 }
 
 #seasons_section{
@@ -448,7 +505,7 @@ background-image: linear-gradient(
 }
 
 .seasons_article{
-    height: 80vh;
+    height: 90vh;
     margin-left: 5%;
     margin-right: 5%;
 }
@@ -459,11 +516,11 @@ background-image: linear-gradient(
     align-items: end;
     border-radius: 10px;
     margin-bottom: 1rem;
+    background: lightcoral;
 }
 
 .seasons_article div{
-    background: red;
-    width: 25%;
+    width: 40%;
     height: 15%;
     display: flex;
     justify-content: center;
@@ -471,19 +528,23 @@ background-image: linear-gradient(
     border-radius: 10px;
 }
 
-#spring header{
+#spring{
+    margin-top: 5vh;
+}
+
+#spring header div{
     background: lightgreen;
 }
 
-#summer header{
+#summer header div{
     background: lightyellow;
 }
 
-#autumn header{
-    background: orange;
+#autumn header div{
+    background: rgb(255,190,109)
 }
 
-#winter header{
+#winter header div{
     background: white;
 }
 
@@ -579,6 +640,18 @@ background-image: linear-gradient(
 
     /*#region Årstider*/
 
+    #seasons_wrapper{
+        grid-template-rows: minmax(30px, 10vh) 90vh 285vh;
+
+    }
+
+    #seasons_header_background {
+        display: flex;
+    }
+
+    .seasons_article div{
+        width: 25%;      
+    }
 
     /*#endregion Årstider*/
 }
