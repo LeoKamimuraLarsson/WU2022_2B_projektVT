@@ -139,7 +139,7 @@ nav::before
     justify-content: flex-start;
 }
 
-.main_header h2{ /*Bra med h2 här?*/
+.main_header h2{
     margin-right: 1rem;
 }
 
@@ -152,18 +152,30 @@ nav::before
 #hem_wrapper{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: minmax(30px, 10vh) 80vh 10vh 40vh 40vh;
+    grid-template-rows: minmax(30px, 10vh) 80vh 10vh 40vh 40vh 7vh;
     grid-template-areas: 
     "nav nav"
     "he1 he1"
     "he2 he2"
     "ar1 ar2"
     "ar3 ar3"
+    "foo foo"
     ;
 }
 
 #hem_wrapper a{
     text-decoration: none;
+    color: grey;
+}
+
+#hem_wrapper footer{
+    grid-area: foo;
+    height: 100%;
+    width: 100%;
+    color: grey;
+    overflow: auto;
+    margin-top: 2vh;
+    font-size: 0.6rem;
 }
 
 #hem_main_header{
@@ -406,7 +418,7 @@ background-image: linear-gradient(
 
 #food_wrapper{
     display: grid;
-    grid-template-columns: minmax(320px, 1fr);
+    grid-template-columns: minmax(320px, 1fr); /*font_1*/
     grid-template-rows: minmax(30px, 10vh) 90vh 240vh;
     grid-template-areas: 
     "nav nav"
@@ -490,6 +502,10 @@ background-image: linear-gradient(
     margin-bottom: 1rem; /*font_1*/
 }
 
+.food_article section a{
+    color: lightskyblue;
+}
+
 .food_article section div{
     width: 4rem;
     height: 2px;
@@ -505,20 +521,21 @@ background-image: linear-gradient(
 
 #history_wrapper{
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: minmax(30px, 10vh) 90vh 10vh 45vh 45vh 90vh 45vh 45vh 90vh;
+    grid-template-columns: minmax(320px, 1fr); /*font_2*/
+    grid-template-rows: minmax(30px, 10vh) 90vh 10vh 45vh 90vh 130vh 90vh 45vh 90vh;
     grid-template-areas: 
-    "nav nav"
-    "mhe mhe"
-    "hhe hhe"
-    "fi1 fi1"
-    "for for"
-    "med fi2"
-    "edo edo"
-    "fi3 fi3"
-    "imp fi4"
+    "nav"
+    "mhe"
+    "hhe"
+    "fi1"
+    "for"
+    "med"
+    "edo"
+    "fi3"
+    "imp"
     ;
     position: relative;
+    color: white;
 }
 
 #history_wrapper::before{
@@ -545,7 +562,6 @@ background-image: linear-gradient(
       rgba(0, 0, 0, 0) 90%,
       rgb(0,0,0,0.75) 100%
     );
-    color: white;
 }
 
 #history_wrapper .main_header::before
@@ -556,7 +572,7 @@ background-image: linear-gradient(
     bottom: 0;
     left: 0;
     right: 0;
-    filter: brightness(60%);
+    filter: brightness(50%);
     background-image: url("../img/karta.jpg");
     background-size: cover;
     background-position: center;
@@ -571,7 +587,6 @@ background-image: linear-gradient(
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: white;
 }
 
 #history_header div{
@@ -585,17 +600,10 @@ background-image: linear-gradient(
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     overflow: auto;
     background: rgb(0, 0, 0, 0.75);
-    color: white;
     font-size: 1rem; /*font_2*/
-}
-
-.history_article div{
-    height: 2px;
-    width: 5rem;
-    background: white;
-    margin-bottom: 1rem;
 }
 
 .history_article p{
@@ -603,47 +611,74 @@ background-image: linear-gradient(
     width: 320px; /*font_2*/
 }
 
+.history_article a{
+    color: lightskyblue;
+}
+
+.history_article_title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.history_article_underline{
+    height: 2px;
+    width: 5rem;
+    background: white;
+    margin-bottom: 1rem;
+}
+
+.history_in_article_img{
+    width: auto; /*font_2*/
+    height: 40vh;
+    margin: 1rem;
+}
+
 .history_img{
     background: rgb(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.history_img img{
+    max-width: 320px; /*font_2*/
+    max-height: 45vh;
 }
 
 #forntid{
-    grid-area: for;
-    
+    grid-area: for;  
 }
 
 #forntid_image{
     grid-area: fi1;
+    overflow: hidden;
+}
+
+#forntid_image img{
+    max-height: none;
+    margin-top: auto;    
 }
 
 #medeltid{
-    grid-area: med;
-    
+    grid-area: med;   
 }
 
 #medeltid_image{
-    grid-area: fi2;
-    background: lightgoldenrodyellow;
-}
-
-#medeltid_image img{
-    width: 50vw;
-    height: 90vh;
+    display: none;
 }
 
 #edoperiod{
-    grid-area: edo;
-    
+    grid-area: edo;   
 }
 
 #edoperiod_image{
     grid-area: fi3;
-    background: lightsalmon;
+    overflow: hidden;
 }
 
 #edoperiod_image img{
-    width: 100%;
-    height: 45vh;
+    max-height: none;
 }
 
 #imperisk_era{
@@ -652,13 +687,7 @@ background-image: linear-gradient(
 }
 
 #imperisk_era_image{
-    grid-area: fi4;
-    background: lightsteelblue;
-}
-
-#imperisk_era_image img{
-    width: 100%;
-    height: 90vh;
+    display: none;
 }
 
 /*#endregion Historia*/
@@ -845,12 +874,13 @@ background-image: linear-gradient(
 
     #hem_wrapper{
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: minmax(30px, 10vh) 80vh 10vh 80vh;
+        grid-template-rows: minmax(30px, 10vh) 80vh 10vh 80vh 7vh;
         grid-template-areas: 
         "nav nav nav"
         "he1 he1 he1"
         "he2 he2 he2"
         "ar1 ar2 ar3"
+        "foo foo foo"
         ;
         
     }
@@ -906,6 +936,52 @@ background-image: linear-gradient(
 
     /*#region Historia*/
 
+    #history_wrapper{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: minmax(30px, 10vh) 90vh 10vh 45vh 45vh 90vh 45vh 45vh 90vh;
+        grid-template-areas: 
+        "nav nav"
+        "mhe mhe"
+        "hhe hhe"
+        "fi1 fi1"
+        "for for"
+        "med fi2"
+        "edo edo"
+        "fi3 fi3"
+        "fi4 imp"
+        ;
+    }
+
+    #edoperiod{
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .history_in_article_img{
+        display: none;
+    }
+
+    #medeltid_image{
+        grid-area: fi2;
+        display: initial;
+        display: flex;
+    }
+
+    #medeltid_image img{
+        max-width: 45wv;
+        max-height: 90vh;
+    }
+    
+    #imperisk_era_image{
+        grid-area: fi4;
+        display: initial;
+        display: flex;
+    }
+
+    #imperisk_era_image img{
+        max-width: 45wv;
+        max-height: 90vh;
+    }
 
     /*#endregion Historia*/
 
