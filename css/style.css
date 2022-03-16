@@ -406,7 +406,7 @@ background-image: linear-gradient(
 
 #food_wrapper{
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(320px, 1fr);
     grid-template-rows: minmax(30px, 10vh) 90vh 240vh;
     grid-template-areas: 
     "nav nav"
@@ -516,7 +516,7 @@ background-image: linear-gradient(
     "med fi2"
     "edo edo"
     "fi3 fi3"
-    "fi4 imp"
+    "imp fi4"
     ;
     position: relative;
 }
@@ -585,9 +585,10 @@ background-image: linear-gradient(
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow-y: auto;
+    overflow: auto;
     background: rgb(0, 0, 0, 0.75);
     color: white;
+    font-size: 1rem; /*font_2*/
 }
 
 .history_article div{
@@ -598,9 +599,8 @@ background-image: linear-gradient(
 }
 
 .history_article p{
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-bottom: 1rem;
+    margin-bottom: 1rem; /*font_2*/
+    width: 320px; /*font_2*/
 }
 
 .history_img{
@@ -684,6 +684,7 @@ background-image: linear-gradient(
     display: flex;
     flex-direction: column;
     position: relative;
+    color: white;
 }
 
 #seasons_header_background {
@@ -696,11 +697,14 @@ background-image: linear-gradient(
     "spr sum"
     "aut win"
     ;
+    overflow: hidden;
+    filter: brightness(50%);
 }
 
 #seasons_header_background img{
     height: 100%;
-    width: 100%;
+    width: auto;
+    overflow: hidden;
 }
 
 #seasons_spring_img{
@@ -732,7 +736,7 @@ background-image: linear-gradient(
 #seasons_underline{
     height: 2px;
     width: 10rem;
-    background: black;
+    background: white;
 }
 
 #seasons_header_icon{
@@ -862,8 +866,8 @@ background-image: linear-gradient(
         background-image: linear-gradient(
         rgba(0, 0, 0) 0%,
         rgba(0, 0, 0, 0.0) 8%,
-      rgba(0, 0, 0, 0) 70%,
-      rgb(0,0,0) 100%
+        rgba(0, 0, 0, 0) 70%,
+        rgb(0,0,0) 100%
         );
     }
 
