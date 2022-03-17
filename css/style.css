@@ -487,7 +487,7 @@ background-image: linear-gradient(
     margin: 1rem;
     height: 80vh;
     overflow-y: auto;
-    font-size: 1rem;
+    font-size: 1rem; /*font_1*/
 }
 
 .food_article img{
@@ -522,7 +522,7 @@ background-image: linear-gradient(
 #history_wrapper{
     display: grid;
     grid-template-columns: minmax(320px, 1fr); /*font_2*/
-    grid-template-rows: minmax(30px, 10vh) 90vh 10vh 45vh 90vh 130vh 90vh 45vh 90vh;
+    grid-template-rows: minmax(30px, 10vh) 90vh 10vh 45vh 90vh 130vh 90vh 45vh 130vh;
     grid-template-areas: 
     "nav"
     "mhe"
@@ -950,6 +950,11 @@ background-image: linear-gradient(
         "fi3 fi3"
         "fi4 imp"
         ;
+    }
+
+    #forntid{
+        flex-direction: row;
+        justify-content: space-evenly;
     }
 
     #edoperiod{
