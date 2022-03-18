@@ -5,6 +5,12 @@
     src: url("../fonts/Dekiru.ttf");
 }
 
+:root{
+    --default_font_size: 1rem;
+    --default_row_length: calc( var(--default_font_size) * 20 );
+    --nav_height: 10vh;
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -43,7 +49,7 @@ nav{
     z-index: 10;
     position: fixed;
     width: 100%;
-    height: 10vh;
+    height: var(--nav_height);
 }
 
 nav::before
@@ -68,7 +74,7 @@ nav::before
     list-style: none;
     background: rgba(0,0,0, 0.9);
     position: absolute;
-    height: 90vh; /*TODO: Sätt nav till 10vh i alla wrappers*/
+    height: 90vh;
     width: 100%;
     top: -90vh;
     transition: all 0.5s;
@@ -106,7 +112,7 @@ nav::before
 }
 
 #hamburger_menu div{
-    width: 25px; /*Borde ha höjd och bredd i procent*/
+    width: 25px; /*Borde ha höjd och bredd i procent?*/
     height: 3px;
     background-color: white;
     margin: 5px;
@@ -152,7 +158,7 @@ nav::before
 #hem_wrapper{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: minmax(30px, 10vh) 80vh 10vh 40vh 40vh 7vh;
+    grid-template-rows: minmax(30px, var(--nav_height)) 80vh 10vh 40vh 40vh 7vh;
     grid-template-areas: 
     "nav nav"
     "he1 he1"
@@ -418,8 +424,8 @@ background-image: linear-gradient(
 
 #food_wrapper{
     display: grid;
-    grid-template-columns: minmax(320px, 1fr); /*font_1*/
-    grid-template-rows: minmax(30px, 10vh) 90vh 240vh;
+    grid-template-columns: minmax(var(--default_row_length), 1fr); 
+    grid-template-rows: minmax(30px, var(--nav_height)) 90vh 240vh;
     grid-template-areas: 
     "nav nav"
     "fhe fhe"
@@ -487,19 +493,19 @@ background-image: linear-gradient(
     margin: 1rem;
     height: 80vh;
     overflow-y: auto;
-    font-size: 1rem; /*font_1*/
+    font-size: var(--default_font_size); 
 }
 
 .food_article img{
     height: auto;
-    width: 300px; /*font_1*/
+    width: calc(var(--default_row_length) - 20px); 
     margin-bottom: 1rem;
     border-radius: 5px;
 }
 
 .food_article section p{
-    width: 320px; /*font_1*/
-    margin-bottom: 1rem; /*font_1*/
+    width: var(--default_row_length); 
+    margin-bottom: var(--default_font_size); 
 }
 
 .food_article section a{
@@ -521,8 +527,8 @@ background-image: linear-gradient(
 
 #history_wrapper{
     display: grid;
-    grid-template-columns: minmax(320px, 1fr); /*font_2*/
-    grid-template-rows: minmax(30px, 10vh) 90vh 10vh 45vh 90vh 130vh 90vh 45vh 130vh;
+    grid-template-columns: minmax(var(--default_row_length), 1fr); 
+    grid-template-rows: minmax(30px, var(--nav_height)) 90vh 10vh 45vh 90vh 130vh 90vh 45vh 130vh;
     grid-template-areas: 
     "nav"
     "mhe"
@@ -603,12 +609,12 @@ background-image: linear-gradient(
     justify-content: center;
     overflow: auto;
     background: rgb(0, 0, 0, 0.75);
-    font-size: 1rem; /*font_2*/
+    font-size: var(--default_font_size); 
 }
 
 .history_article p{
-    margin-bottom: 1rem; /*font_2*/
-    width: 320px; /*font_2*/
+    margin-bottom: var(--default_font_size); 
+    width: var(--default_row_length); 
 }
 
 .history_article a{
@@ -629,9 +635,9 @@ background-image: linear-gradient(
 }
 
 .history_in_article_img{
-    width: auto; /*font_2*/
+    width: auto; 
     height: 40vh;
-    margin: 1rem;
+    margin: var(--default_font_size);
 }
 
 .history_img{
@@ -642,7 +648,7 @@ background-image: linear-gradient(
 }
 
 .history_img img{
-    max-width: 320px; /*font_2*/
+    max-width: var(--default_row_length); 
     max-height: 45vh;
 }
 
@@ -675,15 +681,20 @@ background-image: linear-gradient(
 #edoperiod_image{
     grid-area: fi3;
     overflow: hidden;
+    display: flex;
+    justify-content: space-around;
 }
 
 #edoperiod_image img{
     max-height: none;
 }
 
+#history_wave_img{
+    display: none;
+}
+
 #imperisk_era{
-    grid-area: imp;
-    
+    grid-area: imp;   
 }
 
 #imperisk_era_image{
@@ -699,7 +710,7 @@ background-image: linear-gradient(
 #seasons_wrapper{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: minmax(30px, 10vh) 90vh 365vh;
+    grid-template-rows: minmax(30px, var(--nav_height)) 90vh 365vh;
     grid-template-areas: 
     "nav nav"
     "she she"
@@ -874,7 +885,7 @@ background-image: linear-gradient(
 
     #hem_wrapper{
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: minmax(30px, 10vh) 80vh 10vh 80vh 7vh;
+        grid-template-rows: minmax(30px, var(--nav_height)) 80vh 10vh 80vh 7vh;
         grid-template-areas: 
         "nav nav nav"
         "he1 he1 he1"
@@ -938,7 +949,7 @@ background-image: linear-gradient(
 
     #history_wrapper{
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: minmax(30px, 10vh) 90vh 10vh 45vh 45vh 90vh 45vh 45vh 90vh;
+        grid-template-rows: minmax(30px, var(--nav_height)) 90vh 10vh 45vh 45vh 90vh 45vh 45vh 90vh;
         grid-template-areas: 
         "nav nav"
         "mhe mhe"
@@ -976,6 +987,11 @@ background-image: linear-gradient(
         max-width: 45wv;
         max-height: 90vh;
     }
+
+    #history_wave_img{
+        display: initial;
+        max-width: 450px; 
+    }
     
     #imperisk_era_image{
         grid-area: fi4;
@@ -993,7 +1009,7 @@ background-image: linear-gradient(
     /*#region Årstider*/
 
     #seasons_wrapper{
-        grid-template-rows: minmax(30px, 10vh) 90vh 285vh;
+        grid-template-rows: minmax(30px, var(--nav_height)) 90vh 285vh;
 
     }
 
