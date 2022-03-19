@@ -158,7 +158,7 @@ nav::before
 #hem_wrapper{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: minmax(30px, var(--nav_height)) 80vh 10vh 40vh 40vh 7vh;
+    grid-template-rows: minmax(30px, var(--nav_height)) 80vh 10vh 40vh 40vh 8vh;
     grid-template-areas: 
     "nav nav"
     "he1 he1"
@@ -182,6 +182,9 @@ nav::before
     overflow: auto;
     margin-top: 2vh;
     font-size: 0.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
 }
 
 #hem_main_header{
@@ -441,7 +444,7 @@ background-image: linear-gradient(
     bottom: 0;
     left: 0;
     right: 0;
-    filter: brightness(60%);
+    filter: brightness(80%);
     background-image: url("../img/udon.jpg");
     background-size: cover;
     background-position: center;
@@ -708,23 +711,40 @@ background-image: linear-gradient(
 /*#region Årstider*/
 
 #seasons_wrapper{
+    --seasons_section_height: 400vh;
+
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: minmax(30px, var(--nav_height)) 90vh 365vh;
+    grid-template-rows: minmax(30px, var(--nav_height)) 90vh var(--seasons_section_height);
     grid-template-areas: 
     "nav nav"
     "she she"
     "sec sec"
     ;
+    position: relative;
+    color: white;
+}
+
+#seasons_wrapper::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    filter: brightness(70%);
+    background-image: url("../img/torii.jpg");
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    background-attachment: fixed;
 }
 
 #seasons_header{
     grid-area: she;
-    background: lightblue;
     display: flex;
     flex-direction: column;
     position: relative;
-    color: white;
 }
 
 #seasons_header_background {
@@ -792,8 +812,9 @@ background-image: linear-gradient(
     grid-area: sec;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
-    background: gainsboro;
+    background: rgb(0, 0, 0, 0.75);
 }
 
 #seasons_section_header{
@@ -802,26 +823,38 @@ background-image: linear-gradient(
     justify-content: center;
     align-items: center;
     height: 10vh;
-    background: lightseagreen;
 }
 
 .seasons_article{
-    height: 90vh;
-    margin-left: 5%;
-    margin-right: 5%;
-    overflow-y: auto;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.seasons_article p{
+    width: var(--default_row_length);
+    margin-bottom: var(--default_font_size);
+    font-size: var(--default_font_size);
+}
+
+.seasons_article a{
+    color: lightskyblue;
 }
 
 .seasons_article header{
     height: 45vh;
+    width: var(--default_row_length);
     display: flex;
     align-items: end;
     border-radius: 10px;
     margin-bottom: 1rem;
-    background: lightcoral;
+    background-size: cover;
+    background-position: center;
+    color: black;
 }
 
-.seasons_article div{
+.seasons_article header div{
     width: 40%;
     height: 15%;
     display: flex;
@@ -830,20 +863,32 @@ background-image: linear-gradient(
     border-radius: 10px;
 }
 
-#spring{
-    margin-top: 5vh;
+#spring header{
+    background-image: url("../img/sakura_temple.jpg");
 }
 
 #spring header div{
     background: lightgreen;
 }
 
+#summer header{
+    background-image: url("../img/festival.jpg");
+}
+
 #summer header div{
     background: lightyellow;
 }
 
+#autumn header{
+    background-image: url("../img/autumn2.jpg");
+}
+
 #autumn header div{
     background: rgb(255,190,109)
+}
+
+#winter header{
+    background-image: url("../img/onsen.jpg");
 }
 
 #winter header div{
@@ -885,7 +930,7 @@ background-image: linear-gradient(
 
     #hem_wrapper{
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: minmax(30px, var(--nav_height)) 80vh 10vh 80vh 7vh;
+        grid-template-rows: minmax(30px, var(--nav_height)) 80vh 10vh 80vh 8vh;
         grid-template-areas: 
         "nav nav nav"
         "he1 he1 he1"
@@ -1009,12 +1054,15 @@ background-image: linear-gradient(
     /*#region Årstider*/
 
     #seasons_wrapper{
-        grid-template-rows: minmax(30px, var(--nav_height)) 90vh 285vh;
-
+        grid-template-rows: minmax(30px, var(--nav_height)) 90vh var(--seasons_section_height);
     }
 
     #seasons_header_background {
         display: flex;
+    }
+
+    .seasons_article header{
+        width: calc(var(--default_row_length) * 2);
     }
 
     .seasons_article div{
