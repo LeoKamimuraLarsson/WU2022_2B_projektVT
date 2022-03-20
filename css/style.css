@@ -721,23 +721,7 @@ background-image: linear-gradient(
     "she she"
     "sec sec"
     ;
-    position: relative;
     color: white;
-}
-
-#seasons_wrapper::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    filter: brightness(70%);
-    background-image: url("../img/torii.jpg");
-    background-size: cover;
-    background-position: center;
-    z-index: -1;
-    background-attachment: fixed;
 }
 
 #seasons_header{
@@ -745,6 +729,12 @@ background-image: linear-gradient(
     display: flex;
     flex-direction: column;
     position: relative;
+    background-image: linear-gradient(
+      rgba(0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.0) 8%,
+      rgba(0, 0, 0, 0) 90%,
+      rgb(0,0,0,0.75) 100%
+    );
 }
 
 #seasons_header_background {
@@ -759,27 +749,35 @@ background-image: linear-gradient(
     ;
     overflow: hidden;
     filter: brightness(50%);
+    position: fixed;
+    z-index: -1;
+}
+
+#seasons_header_background figure{
+    overflow: hidden;
+    height: 100%;
+    width: auto;
+    display: flex;
+    justify-content: center;
 }
 
 #seasons_header_background img{
     height: 100%;
-    width: auto;
-    overflow: hidden;
 }
 
-#seasons_spring_img{
+#seasons_header_spring_img{
     grid: spr;
 }
 
-#seasons_summer_img{
+#seasons_header_summer_img{
     grid: sum;
 }
 
-#seasons_autumn_img{
+#seasons_header_autumn_img{
     grid: aut;
 }
 
-#seasons_winter_img{
+#seasons_header_winter_img{
     grid: win;
 }
 
@@ -815,6 +813,22 @@ background-image: linear-gradient(
     justify-content: space-evenly;
     align-items: center;
     background: rgb(0, 0, 0, 0.75);
+    position: relative;
+}
+
+#seasons_section::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    filter: brightness(70%);
+    background-image: url("../img/torii.jpg");
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    background-attachment: fixed;
 }
 
 #seasons_section_header{
