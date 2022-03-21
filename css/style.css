@@ -81,6 +81,7 @@ nav::before
     align-items: center;
     font-family: dekiru;
     font-weight: bold;
+    overflow: auto;
 }
 
 .nav-active{
@@ -178,13 +179,28 @@ nav::before
     grid-area: foo;
     height: 100%;
     width: 100%;
-    color: grey;
+    color: gray;
     overflow: auto;
     margin-top: 2vh;
     font-size: 0.6rem;
     display: flex;
     flex-direction: column;
     justify-content: end;
+    position: relative;
+}
+
+#hem_wrapper footer::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+
+    background-image: url("../img/wood.jpg");
+    filter: brightness(30%);
+    background-size: cover;
 }
 
 #hem_main_header{
@@ -489,6 +505,11 @@ background-image: linear-gradient(
     height: 2px;
 }
 
+#food_section_wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
 .food_article{
     display: flex;
     flex-direction: column;
@@ -711,11 +732,11 @@ background-image: linear-gradient(
 /*#region Årstider*/
 
 #seasons_wrapper{
-    --seasons_section_height: 400vh;
+    --seasons_section_height: 440vh;
 
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: minmax(30px, var(--nav_height)) minmax(270px ,90vh) minmax(1200px, var(--seasons_section_height));
+    grid-template-rows: minmax(30px, var(--nav_height)) minmax(270px ,90vh) minmax(1320px, var(--seasons_section_height));
     grid-template-areas: 
     "nav nav"
     "she she"
@@ -831,14 +852,6 @@ background-image: linear-gradient(
     background-attachment: fixed;
 }
 
-#seasons_section_header{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 10vh;
-}
-
 .seasons_article{
     overflow: auto;
     display: flex;
@@ -854,6 +867,13 @@ background-image: linear-gradient(
 
 .seasons_article a{
     color: lightskyblue;
+}
+
+.seasons_article ul{
+    width: var(--default_row_length);  
+    margin-bottom: var(--default_font_size);
+    font-size: var(--default_font_size); 
+    list-style-position: inside;
 }
 
 .seasons_article header{
@@ -1003,6 +1023,18 @@ background-image: linear-gradient(
     /*#endregion Hem*/
 
     /*#region Mat*/
+
+    #food_wrapper{
+        grid-template-rows: minmax(30px, var(--nav_height)) 90vh 74vh;
+    }
+
+    .food_article{
+        height: 74vh;
+    }
+
+    #food_section_wrapper{
+        flex-direction: row;
+    }
 
     /*#endregion Mat*/
 
