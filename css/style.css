@@ -158,8 +158,8 @@ nav::before
 
 #hem_wrapper{
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: minmax(30px, var(--nav_height)) 80vh 10vh 40vh 40vh 8vh;
+    grid-template-columns: minmax(calc(var(--default_row_length) / 2), 1fr) minmax(calc(var(--default_row_length) / 2), 1fr);
+    grid-template-rows: minmax(30px, var(--nav_height)) minmax(240px, 80vh) minmax(30px, 10vh) minmax(120px, 40vh) minmax(120px, 40vh) minmax(24px, 8vh);
     grid-template-areas: 
     "nav nav"
     "he1 he1"
@@ -444,7 +444,7 @@ background-image: linear-gradient(
 #food_wrapper{
     display: grid;
     grid-template-columns: minmax(var(--default_row_length), 1fr); 
-    grid-template-rows: minmax(30px, var(--nav_height)) 90vh 240vh;
+    grid-template-rows: minmax(30px, var(--nav_height)) minmax(270px, 90vh) minmax(720px, 240vh);
     grid-template-areas: 
     "nav nav"
     "fhe fhe"
@@ -735,7 +735,7 @@ background-image: linear-gradient(
     --seasons_section_height: 440vh;
 
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(var(--default_row_length), 1fr);
     grid-template-rows: minmax(30px, var(--nav_height)) minmax(270px ,90vh) minmax(1320px, var(--seasons_section_height));
     grid-template-areas: 
     "nav nav"
@@ -965,8 +965,8 @@ background-image: linear-gradient(
     /*#region Hem*/
 
     #hem_wrapper{
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: minmax(30px, var(--nav_height)) 80vh 10vh 80vh 8vh;
+        grid-template-columns: minmax(calc(var(--default_row_length) * 0.33), 1fr) minmax(calc(var(--default_row_length) * 0.33), 1fr) minmax(calc(var(--default_row_length) * 0.34), 1fr);
+        grid-template-rows: minmax(30px, var(--nav_height)) minmax(240px, 80vh) minmax(30px, 10vh) minmax(240px, 80vh) minmax(24px, 8vh);
         grid-template-areas: 
         "nav nav nav"
         "he1 he1 he1"
@@ -1025,11 +1025,12 @@ background-image: linear-gradient(
     /*#region Mat*/
 
     #food_wrapper{
-        grid-template-rows: minmax(30px, var(--nav_height)) 90vh 74vh;
+        grid-template-rows: minmax(30px, var(--nav_height)) minmax(270px, 90vh) minmax(222px, 90vh);
     }
 
     .food_article{
         height: 74vh;
+        min-height: 222px;
     }
 
     #food_section_wrapper{
@@ -1041,8 +1042,8 @@ background-image: linear-gradient(
     /*#region Historia*/
 
     #history_wrapper{
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: minmax(30px, var(--nav_height)) 90vh 10vh 45vh 45vh 90vh 45vh 45vh 90vh;
+        grid-template-columns: minmax(calc(var(--default_row_length) / 2), 1fr) minmax(calc(var(--default_row_length) / 2), 1fr);
+        grid-template-rows: minmax(30px, var(--nav_height)) minmax(270px, 90vh) minmax(30px, 10vh) minmax(135px, 45vh) minmax(135px, 45vh) minmax(270px, 90vh) minmax(135px, 45vh) minmax(135px, 45vh) minmax(270px, 90vh);
         grid-template-areas: 
         "nav nav"
         "mhe mhe"
@@ -1102,19 +1103,44 @@ background-image: linear-gradient(
     /*#region Årstider*/
 
     #seasons_wrapper{
-        grid-template-rows: minmax(30px, var(--nav_height)) 90vh var(--seasons_section_height);
+        grid-template-rows: minmax(30px, var(--nav_height)) minmax(270px, 90vh) calc(var(--seasons_section_height) - 40vh);
     }
 
     #seasons_header_background {
         display: flex;
     }
 
+    #seasons_header_icon h2{
+        background: rgba(0, 0, 0, 0.6);
+        border-radius: 7px;
+    }
+
     .seasons_article header{
         width: calc(var(--default_row_length) * 2);
     }
 
-    .seasons_article div{
-        width: 25%;      
+    .seasons_article section{
+        display: flex;
+        width: 100%;
+        --seasons_article_p_margin: 0.9375rem;
+    }
+
+    .seasons_left_paragraph{
+        margin-right: var(--seasons_article_p_margin);
+        width: calc(var(--default_row_length) - var(--seasons_article_p_margin));   
+    }
+
+    .seasons_left_paragraph p{
+        width: calc(var(--default_row_length) - var(--seasons_article_p_margin));   
+    }
+
+    .seasons_right_paragraph{
+        margin-left: var(--seasons_article_p_margin);
+        width: calc(var(--default_row_length) - var(--seasons_article_p_margin));   
+    }
+
+    .seasons_right_paragraph p, .seasons_right_paragraph ul{
+        width: calc(var(--default_row_length) - var(--seasons_article_p_margin));   
     }
 
     /*#endregion Årstider*/
