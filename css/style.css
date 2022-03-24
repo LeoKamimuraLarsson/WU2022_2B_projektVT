@@ -50,6 +50,7 @@ nav{
     position: fixed;
     width: 100%;
     height: var(--nav_height);
+    min-height: 30px;
 }
 
 nav::before
