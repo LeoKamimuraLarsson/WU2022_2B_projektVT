@@ -438,14 +438,6 @@ nav::before
 /*#endregion Hem*/
 
 
-/* how to make gradient:
-background-image: linear-gradient(
-      rgba(0, 0, 0, 0.0) 0%,
-      rgba(0, 0, 0, 0.0) 70%,
-      rgb(0, 0, 0, 0.5) 100%
-    );
-*/
-
 
 /*#region Mat*/
 
@@ -556,7 +548,7 @@ background-image: linear-gradient(
 #history_wrapper{
     display: grid;
     grid-template-columns: minmax(var(--default_row_length), 1fr); 
-    grid-template-rows: minmax(30px, var(--nav_height)) minmax(270px, 90vh) minmax(30px, 10vh) minmax(135px, 45vh) minmax(270px, 90vh) minmax(390px, 130vh) minmax(270px, 90vh) minmax(135px, 45vh) minmax(390px, 130vh);
+    grid-template-rows: minmax(30px, var(--nav_height)) minmax(270px, 90vh) minmax(calc( var(--default_font_size) * 1.618 * 1.618 * 1.618 + 1rem + 2px), 20vh) minmax(135px, 45vh) minmax(440px, 90vh) minmax(730px, 130vh) minmax(430px, 90vh) minmax(135px, 45vh) minmax(640px, 130vh);
     grid-template-areas: 
     "nav"
     "mhe"
@@ -1033,7 +1025,7 @@ background-image: linear-gradient(
     /*#region Mat*/
 
     #food_wrapper{
-        grid-template-rows: minmax(30px, var(--nav_height)) minmax(270px, 90vh) minmax(222px, auto);
+        grid-template-rows: minmax(45px, var(--nav_height)) minmax(270px, 90vh) minmax(222px, auto);
     }
 
     .food_article{
@@ -1050,7 +1042,7 @@ background-image: linear-gradient(
 
     #history_wrapper{
         grid-template-columns: minmax(calc(var(--default_row_length) / 2), 1fr) minmax(calc(var(--default_row_length) / 2), 1fr);
-        grid-template-rows: minmax(30px, var(--nav_height)) minmax(270px, 90vh) minmax(30px, 10vh) minmax(135px, 45vh) minmax(135px, 45vh) minmax(270px, 90vh) minmax(135px, 45vh) minmax(135px, 45vh) minmax(270px, 90vh);
+        grid-template-rows: minmax(45px, var(--nav_height)) minmax(270px, 90vh) minmax(calc( var(--default_font_size) * 1.618 * 1.618 * 1.618 + 1rem + 2px), 20vh) minmax(135px, 45vh) minmax(220px, 45vh) minmax(480px, 90vh) minmax(270px, 45vh) minmax(135px, 45vh) minmax(270px, 90vh);
         grid-template-areas: 
         "nav nav"
         "mhe mhe"
@@ -1110,7 +1102,7 @@ background-image: linear-gradient(
     /*#region Årstider*/
 
     #seasons_wrapper{
-        grid-template-rows: minmax(30px, var(--nav_height)) minmax(270px, 90vh) calc(var(--seasons_section_height) - 40vh);
+        grid-template-rows: minmax(45px, var(--nav_height)) minmax(270px, 90vh) calc(var(--seasons_section_height) - 40vh);
     }
 
     #seasons_header_background {
