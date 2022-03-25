@@ -452,7 +452,7 @@ background-image: linear-gradient(
 #food_wrapper{
     display: grid;
     grid-template-columns: minmax(var(--default_row_length), 1fr); 
-    grid-template-rows: minmax(30px, var(--nav_height)) minmax(270px, 90vh) minmax(720px, 240vh);
+    grid-template-rows: minmax(30px, var(--nav_height)) minmax(270px, 90vh) minmax(720px, auto);
     grid-template-areas: 
     "nav nav"
     "fhe fhe"
@@ -503,10 +503,6 @@ background-image: linear-gradient(
     margin: 0.8rem;
 }
 
-#food_section header h1{
-    font-size: 2rem;
-}
-
 #food_section header div{
     background: white;
     width: 10rem;
@@ -523,7 +519,7 @@ background-image: linear-gradient(
     flex-direction: column;
     align-items: center;
     margin: 1rem;
-    height: 80vh;
+    height: 82vh;
     overflow-y: auto;
     font-size: var(--default_font_size); 
 }
@@ -1037,11 +1033,10 @@ background-image: linear-gradient(
     /*#region Mat*/
 
     #food_wrapper{
-        grid-template-rows: minmax(30px, var(--nav_height)) minmax(270px, 90vh) minmax(222px, 90vh);
+        grid-template-rows: minmax(30px, var(--nav_height)) minmax(270px, 90vh) minmax(222px, auto);
     }
 
     .food_article{
-        height: 74vh;
         min-height: 222px;
     }
 
