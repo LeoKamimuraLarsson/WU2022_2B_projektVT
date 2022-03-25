@@ -20,21 +20,29 @@
 h1{
     font-family: dekiru;
     font-weight: bold;
+    font-size: calc( var(--default_font_size) * 1.618 * 1.618 * 1.618);
 }
 
 h2{
     font-family: dekiru;
     font-weight: bold;
+    font-size: calc( var(--default_font_size) * 1.618 * 1.618);
 }
 
 h3{
     font-family: dekiru;
     font-weight: bold;
+    font-size: calc( var(--default_font_size) * 1.618 );
 }
 
 figcaption{
     font-family: dekiru;
     font-weight: bold;
+    font-size: calc( var(--default_font_size) * 1.618 );
+}
+
+p{
+    font-family: 'Times New Roman', Times, serif;
 }
 
 body{
@@ -160,7 +168,7 @@ nav::before
 #hem_wrapper{
     display: grid;
     grid-template-columns: minmax(calc(var(--default_row_length) / 2), 1fr) minmax(calc(var(--default_row_length) / 2), 1fr);
-    grid-template-rows: minmax(30px, var(--nav_height)) minmax(240px, 80vh) minmax(30px, 10vh) minmax(120px, 40vh) minmax(120px, 40vh) minmax(24px, 8vh);
+    grid-template-rows: minmax(30px, var(--nav_height)) minmax(240px, 80vh) minmax(calc( var(--default_font_size) * 1.618 * 1.618), 10vh) minmax(120px, 40vh) minmax(120px, 40vh) minmax(24px, 8vh);
     grid-template-areas: 
     "nav nav"
     "he1 he1"
@@ -395,7 +403,6 @@ nav::before
     margin: 1rem;
     transition: all 0.5s;
     color: white;
-    font-size: 1.5rem;
 }
 
 .hem_hover_rubrik:hover h3{
@@ -945,8 +952,12 @@ background-image: linear-gradient(
         overflow-x: hidden;
     }
 
+    nav{
+        min-height: 45px;
+    }
+
     #nav_links{
-        height: 10vh;
+        height: 100%;
         transition: all 0s;
         top: 0;
         background: none;
@@ -967,7 +978,7 @@ background-image: linear-gradient(
 
     #hem_wrapper{
         grid-template-columns: minmax(calc(var(--default_row_length) * 0.33), 1fr) minmax(calc(var(--default_row_length) * 0.33), 1fr) minmax(calc(var(--default_row_length) * 0.34), 1fr);
-        grid-template-rows: minmax(30px, var(--nav_height)) minmax(240px, 80vh) minmax(30px, 10vh) minmax(240px, 80vh) minmax(24px, 8vh);
+        grid-template-rows: minmax(45px, var(--nav_height)) minmax(240px, 80vh) minmax(calc( var(--default_font_size) * 1.618 * 1.618), 10vh) minmax(240px, 80vh) minmax(24px, 8vh);
         grid-template-areas: 
         "nav nav nav"
         "he1 he1 he1"
