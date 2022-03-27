@@ -1034,6 +1034,7 @@ nav::before
 
     #food_section_wrapper{
         flex-direction: row;
+        flex-flow: row wrap;
     }
 
     /*#endregion Mat*/
