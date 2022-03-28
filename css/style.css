@@ -548,7 +548,7 @@ nav::before
 #history_wrapper{
     display: grid;
     grid-template-columns: minmax(var(--default_row_length), 1fr); 
-    grid-template-rows: minmax(30px, var(--nav_height)) minmax(270px, 90vh) minmax(calc( var(--default_font_size) * 1.618 * 1.618 * 1.618 + 1rem + 2px), 20vh) minmax(135px, 45vh) minmax(440px, 90vh) minmax(770px, 130vh) minmax(430px, 90vh) minmax(135px, 45vh) minmax(640px, 130vh);
+    grid-template-rows: minmax(30px, var(--nav_height)) minmax(270px, 90vh) minmax(calc( var(--default_font_size) * 1.618 * 1.618 * 1.618 + 1rem + 2px), 20vh) minmax(135px, 45vh) minmax(440px, 90vh) minmax(880px, 130vh) minmax(430px, 90vh) minmax(135px, 45vh) minmax(640px, 130vh);
     grid-template-areas: 
     "nav"
     "mhe"
