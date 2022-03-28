@@ -548,7 +548,7 @@ nav::before
 #history_wrapper{
     display: grid;
     grid-template-columns: minmax(var(--default_row_length), 1fr); 
-    grid-template-rows: minmax(30px, var(--nav_height)) minmax(270px, 90vh) minmax(calc( var(--default_font_size) * 1.618 * 1.618 * 1.618 + 1rem + 2px), 20vh) minmax(135px, 45vh) minmax(440px, 90vh) minmax(730px, 130vh) minmax(430px, 90vh) minmax(135px, 45vh) minmax(640px, 130vh);
+    grid-template-rows: minmax(30px, var(--nav_height)) minmax(270px, 90vh) minmax(calc( var(--default_font_size) * 1.618 * 1.618 * 1.618 + 1rem + 2px), 20vh) minmax(135px, 45vh) minmax(440px, 90vh) minmax(770px, 130vh) minmax(430px, 90vh) minmax(135px, 45vh) minmax(640px, 130vh);
     grid-template-areas: 
     "nav"
     "mhe"
@@ -783,19 +783,19 @@ nav::before
 }
 
 #seasons_header_spring_img{
-    grid: spr;
+    grid-area: spr;
 }
 
 #seasons_header_summer_img{
-    grid: sum;
+    grid-area: sum;
 }
 
 #seasons_header_autumn_img{
-    grid: aut;
+    grid-area: aut;
 }
 
 #seasons_header_winter_img{
-    grid: win;
+    grid-area: win;
 }
 
 #seasons_header_title{
@@ -870,6 +870,10 @@ nav::before
     margin-bottom: var(--default_font_size);
     font-size: var(--default_font_size); 
     list-style-position: inside;
+}
+
+.seasons_article h3{
+    margin-bottom: var(--default_font_size);
 }
 
 .seasons_article header{
@@ -1043,7 +1047,7 @@ nav::before
 
     #history_wrapper{
         grid-template-columns: minmax(calc(var(--default_row_length) / 2), 1fr) minmax(calc(var(--default_row_length) / 2), 1fr);
-        grid-template-rows: minmax(45px, var(--nav_height)) minmax(270px, 90vh) minmax(calc( var(--default_font_size) * 1.618 * 1.618 * 1.618 + 1rem + 2px), 20vh) minmax(135px, 45vh) minmax(220px, 45vh) minmax(480px, 90vh) minmax(270px, 45vh) minmax(135px, 45vh) minmax(450px, 90vh);
+        grid-template-rows: minmax(45px, var(--nav_height)) minmax(270px, 90vh) minmax(calc( var(--default_font_size) * 1.618 * 1.618 * 1.618 + 1rem + 2px), 20vh) minmax(135px, 45vh) minmax(220px, 45vh) minmax(510px, 90vh) minmax(270px, 45vh) minmax(135px, 45vh) minmax(450px, 90vh);
         grid-template-areas: 
         "nav nav"
         "mhe mhe"
@@ -1078,7 +1082,6 @@ nav::before
     }
 
     #medeltid_image img{
-        max-width: 45wv;
         max-height: 90vh;
     }
 
@@ -1094,7 +1097,6 @@ nav::before
     }
 
     #imperisk_era_image img{
-        max-width: 45wv;
         max-height: 90vh;
     }
 
